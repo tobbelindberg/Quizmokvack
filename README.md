@@ -19,7 +19,7 @@ The app consists of three modules:
 
 ## Backend
 The quiz game always provides 10 questions that ris andomly grabbed from a pool of 20 questions stored
-in a Firebase Realtime Database and these questions are 20 random questions grabbed from Open Trivia Database](https://opentdb.com/api_config.php)
+in a Firebase Realtime Database and these questions are 20 random questions grabbed from [Open Trivia Database](https://opentdb.com/api_config.php)
 where I have modified it so that some questions have an `image_url` as well.
 
 ## Unit testing
