@@ -17,11 +17,6 @@ class AndroidMocks {
     @Mock
     private lateinit var mockContextResources: Resources
 
-    //@Mock
-    //private lateinit var mockMainThreadLooper: Looper
-
-    // private val mainThread: ScheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
-
     init {
         MockitoAnnotations.initMocks(this)
         Mockito.`when`(mockApplicationContext.resources).thenReturn(mockContextResources)
@@ -40,29 +35,6 @@ class AndroidMocks {
             mockContextResources.getString(Matchers.anyInt(), Matchers.any())
         ).thenReturn("Some string with a parameter in it")
 
-        /**
-        PowerMockito.mockStatic(Looper::class.java)
-        val mockMainThreadLooper: Looper = mock(Looper::class.java)
-        Mockito.`when`(Looper.getMainLooper()).thenReturn(mockMainThreadLooper)
-        val mockMainThreadHandler: Handler = mock(Handler::class.java)
-        val handlerPostAnswer: Answer<Boolean> =
-        Answer<Boolean> { invocation ->
-        val runnable = invocation.getArgumentAt(0, Runnable::class.java)
-        var delay: Long? = 0L
-        if (invocation.arguments.size > 1) {
-        delay = invocation.getArgumentAt(1, Long::class.java)
-        }
-        if (runnable != null) {
-        mainThread.schedule(runnable, delay, TimeUnit.MILLISECONDS)
-        }
-        true
-        }
-        Mockito.doAnswer(handlerPostAnswer).`when`(mockMainThreadHandler).post(any(Runnable::class.java))
-        Mockito.doAnswer(handlerPostAnswer).`when`(mockMainThreadHandler)
-        .postDelayed(any(Runnable::class.java), anyLong())
-        PowerMockito.whenNew(Handler::class.java).withArguments(mockMainThreadLooper)
-        .thenReturn(mockMainThreadHandler)
-         */
     }
 
 }

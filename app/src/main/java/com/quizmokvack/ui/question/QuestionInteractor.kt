@@ -28,7 +28,8 @@ class QuestionInteractor
             fiftyFiftyEnabled(),
             disableFiftyFifty(),
             boostTimeEnabled(),
-            disableBoostTime()
+            disableBoostTime(),
+            questionTimout()
         )
             .scan(QuestionState(), ::reduce)
     }

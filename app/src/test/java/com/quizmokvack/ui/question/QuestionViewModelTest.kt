@@ -15,8 +15,6 @@ import org.junit.*
 import java.util.concurrent.CountDownLatch
 import javax.inject.Inject
 
-//@RunWith(PowerMockRunner::class)
-//@PowerMockIgnore("javax.net.ssl.*")
 class QuestionViewModelTest {
 
     @Rule
@@ -100,7 +98,6 @@ class QuestionViewModelTest {
     fun testNextButtonDisabled() {
         viewModel.initStateObservable()
         okHttpCountDownLatch.await()
-
 
         Assert.assertFalse(
             "Expecting next button to be disabled",
