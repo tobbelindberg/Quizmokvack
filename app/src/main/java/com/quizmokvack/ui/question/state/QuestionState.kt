@@ -14,5 +14,6 @@ data class QuestionState(
     val fiftyFiftyEnabled: Boolean = false,
     val enableNextButton: Boolean = false,
     val error: Throwable? = null,
-    val loading: Boolean = false
+    val loading: Boolean = false,
+    val timedOut: Boolean = false
 ) : State

@@ -117,8 +117,10 @@ class QuestionViewModel
             boostTimeEnabled.set(false)
             nextButtonEnabled.set(true)
         } ?: run {
-            fiftyFiftyEnabled.set(state.fiftyFiftyEnabled)
-            boostTimeEnabled.set(state.boostTimeEnabled)
+            if (!state.timedOut) {
+                fiftyFiftyEnabled.set(state.fiftyFiftyEnabled)
+                boostTimeEnabled.set(state.boostTimeEnabled)
+            }
         }
 
         state.questionPage?.also { questionPage ->
