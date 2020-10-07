@@ -79,12 +79,13 @@ class QuestionFragment : BaseFragment<QuestionViewModel>() {
     }
 
     fun onNextClick(view: View) {
-        if (viewModel.isLastPage) {
-
+        val direction = if (viewModel.isLastPage) {
+            QuestionFragmentDirections.actionQuestionFragmentToQuizResultsFragment()
         } else {
-            val direction = QuestionFragmentDirections.actionToQuestionFragment()
-            navController.navigate(direction)
+            QuestionFragmentDirections.actionToQuestionFragment()
         }
+        navController.navigate(direction)
+
     }
 
 }

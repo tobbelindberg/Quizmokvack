@@ -18,10 +18,15 @@ The app consists of three modules:
 * Network service interfaces that the `data` module implements.
 
 ## Backend
-The quiz data is stored in a Firebase Realtime Database and it's essentially 20 random questions grabbed from [Open Trivia Database](https://opentdb.com/api_config.php) where I have modified it so that some questions have an `image_url`.
+The quiz game always provides 10 questions that ris andomly grabbed from a pool of 20 questions stored
+in a Firebase Realtime Database and these questions are 20 random questions grabbed from Open Trivia Database](https://opentdb.com/api_config.php)
+where I have modified it so that some questions have an `image_url` as well.
 
 ## Unit testing
-There is unit tests that you can find in the `app` module. It's using `OkHttps` `MockWebServer` that reads a copy of the REST API response from the test `resources` folder and like that you can unit test everything from `ViewModel`s all the way down to the network services and this can run on a CI server without any need of an emulator or device.
+There is unit tests that you can find in the `app` module. It's using `OkHttps` `MockWebServer` that
+reads a copy of the REST API response from the test `resources` folder and like that you can unit test
+everything from `ViewModel`s all the way down to the network services and this can run on a CI server
+without any need of an emulator or device.
 
 ## Third party Dependencies
 ### RxJava & RxKotlin

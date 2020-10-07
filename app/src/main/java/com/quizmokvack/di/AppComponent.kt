@@ -3,6 +3,7 @@ package com.quizmokvack.di
 import com.quizmokvack.ui.MainActivity
 import com.quizmokvack.ui.question.QuestionFragment
 import com.quizmokvack.ui.quizsplash.QuizSplashFragment
+import com.quizmokvack.ui.quizresults.QuizResultsFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -18,5 +19,7 @@ interface AppComponent {
     fun inject(quizSplashFragment: QuizSplashFragment)
 
     fun inject(questionFragment: QuestionFragment)
+
+    fun inject(quizResultsFragment: QuizResultsFragment)
 
 }

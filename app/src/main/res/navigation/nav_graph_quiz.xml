@@ -12,8 +12,8 @@
             android:id="@+id/action_quizSplashFragment_to_questionFragment"
             app:destination="@id/questionFragment"
             app:enterAnim="@anim/slide_in_bottom"
-            app:exitAnim="@anim/slide_out_bottom"
-            app:popEnterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_bottom"
             app:popUpTo="@id/nav_graph_quiz"
             app:popUpToInclusive="true" />
@@ -31,6 +31,32 @@
     <fragment
         android:id="@+id/questionFragment"
         android:name="com.quizmokvack.ui.question.QuestionFragment"
-        android:label="PostDetailFragment" />
+        android:label="PostDetailFragment" >
+        <action
+            android:id="@+id/action_questionFragment_to_quizResultsFragment"
+            app:destination="@id/quizResultsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_quiz"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultsFragment"
+        android:name="com.quizmokvack.ui.quizresults.QuizResultsFragment"
+        android:label="QuizResultsFragment" >
+        <action
+            android:id="@+id/action_quizResultsFragment_to_quizSplashFragment"
+            app:destination="@id/quizSplashFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@id/nav_graph_quiz"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 
 </navigation>
