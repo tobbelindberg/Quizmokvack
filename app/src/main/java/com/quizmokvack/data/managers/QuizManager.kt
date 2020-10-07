@@ -3,151 +3,32 @@ package com.quizmokvack.data.managers
 import com.quizmokvack.data.managers.model.ChoiceResponse
 import com.quizmokvack.data.managers.model.QuestionPage
 import com.quizmokvack.data.managers.model.ScoreBoard
-import com.quizmokvack.data.repositories.QuizRepo
 import com.quizmokvack.domain.util.Empty
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.subjects.BehaviorSubject
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class QuizManager
-@Inject constructor(private val quizRepo: QuizRepo) {
-    companion object {
-        private const val QUIZ_SIZE = 10
-    }
+interface QuizManager {
+    fun getQuiz(): Observable<List<QuestionPage>>
 
-    private val quiz = BehaviorSubject.create<List<QuestionPage>>()
-    private val quizSerialized = quiz.toSerialized()
+    fun initializeQuiz(): Observable<List<QuestionPage>>
 
-    private var scoreBoard = ScoreBoard()
-        @Synchronized get
-        @Synchronized set
 
-    private var currentQuestionIndex = 0
-        @Synchronized get
-        @Synchronized set
+    fun getCurrentQuestion(): Observable<QuestionPage>
 
-    private var fiftyFiftyEnabled = true
-        @Synchronized get
-        @Synchronized set
-
-    private var boostTimeEnabled = true
-        @Synchronized get
-        @Synchronized set
-
-    fun getQuiz(): Observable<List<QuestionPage>> {
-        return if (quiz.hasValue()) {
-            quiz
-        } else {
-            initializeQuiz()
-        }
-    }
-
-    fun initializeQuiz(): Observable<List<QuestionPage>> {
-        return resetGameAttributes()
-            .flatMap {
-                quizRepo.getQuiz()
-                    .map { quiz ->
-                        quiz.shuffled().take(QUIZ_SIZE).mapIndexed { index, question ->
-                            val choices =
-                                question.incorrectAnswers.plus(question.correctAnswer).shuffled()
-                            QuestionPage(
-                                index, QUIZ_SIZE, question.category,
-                                question.question, question.imageUrl, question.correctAnswer,
-                                choices.indexOf(question.correctAnswer),
-                                choices
-                            )
-                        }
-                    }
-            }
-            .doOnNext(quizSerialized::onNext)
-    }
-
-    private fun resetGameAttributes(): Observable<Empty> {
-        return Observable.fromCallable {
-            scoreBoard = ScoreBoard()
-            currentQuestionIndex = 0
-            fiftyFiftyEnabled = true
-            boostTimeEnabled = true
-
-            Empty
-        }
-    }
-
-    fun getCurrentQuestion(): Observable<QuestionPage> {
-        return getQuiz()
-            .map {
-                it[currentQuestionIndex]
-            }
-            .doOnNext {
-                if (currentQuestionIndex < (QUIZ_SIZE - 1)) {
-                    currentQuestionIndex++
-                }
-            }
-
-    }
-
-    fun getScoreBoard(): Observable<ScoreBoard> {
-        return Observable.just(scoreBoard)
-    }
+    fun getScoreBoard(): Observable<ScoreBoard>
 
     fun checkQuestionChoice(
         currentQuestionPage: QuestionPage,
-        chosenChoiceIndex: Int,
-        responseTime: Long
-    ): Observable<ChoiceResponse> {
-        return Observable.fromCallable {
-            ChoiceResponse(
-                chosenChoiceIndex == currentQuestionPage.correctAnswerIndex,
-                currentQuestionPage.correctAnswer
-            )
-        }
-            .doOnNext { response ->
-                val score = scoreBoard.score.takeIf { response.isCorrect }?.let {
-                    it + 1
-                } ?: scoreBoard.score
-                val avarageResponseTime =
-                    scoreBoard.avarageResponseTime + responseTime / QUIZ_SIZE
+        chosenChoiceIndex: Int, responseTime: Long
+    ): Observable<ChoiceResponse>
 
-                scoreBoard = ScoreBoard(score, avarageResponseTime)
-            }
-    }
+    fun questionTimeout(responseTime: Long): Observable<Empty>
 
-    fun questionTimeout(responseTime: Long): Observable<Empty> {
-        return Observable.fromCallable {
-            scoreBoard = ScoreBoard(
-                scoreBoard.score,
-                scoreBoard.avarageResponseTime + responseTime / QUIZ_SIZE
-            )
+    fun fiftyFiftyEnabled(): Observable<Boolean>
 
-            Empty
-        }
-    }
+    fun disableFiftyFifty(): Observable<Boolean>
 
-    fun fiftyFiftyEnabled(): Observable<Boolean> {
-        return Observable.just(fiftyFiftyEnabled)
-    }
+    fun boostTimeEnabled(): Observable<Boolean>
 
-    fun disableFiftyFifty(): Observable<Boolean> {
-        return Observable.fromCallable {
-            fiftyFiftyEnabled = false
-
-            fiftyFiftyEnabled
-        }
-    }
-
-    fun boostTimeEnabled(): Observable<Boolean> {
-        return Observable.just(boostTimeEnabled)
-    }
-
-    fun disableBoostTime(): Observable<Boolean> {
-        return Observable.fromCallable {
-            boostTimeEnabled = false
-
-
-            boostTimeEnabled
-        }
-    }
+    fun disableBoostTime(): Observable<Boolean>
 
 }

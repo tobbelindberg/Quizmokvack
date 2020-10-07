@@ -14,9 +14,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import javax.inject.Inject
 
 class QuizInteractor
-@Inject constructor(
-    private val quizManager: QuizManager
-) {
+@Inject constructor(private val quizManager: QuizManager) {
 
     private val refresh = PublishSubject.create<Empty>()
 

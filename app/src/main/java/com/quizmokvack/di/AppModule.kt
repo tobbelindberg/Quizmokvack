@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Provides components and modules used all over the place here.
  */
-@Module(includes = [NetworkModule::class])
+@Module(includes = [NetworkModule::class, ManagerModule::class])
 open class AppModule(private val appContext: Context) {
 
     companion object {

@@ -14,9 +14,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import javax.inject.Inject
 
 class QuizResultsInteractor
-@Inject constructor(
-    private val quizManager: QuizManager
-) {
+@Inject constructor(private val quizManager: QuizManager) {
 
     private val refresh = PublishSubject.create<Empty>()
 
@@ -42,7 +40,7 @@ class QuizResultsInteractor
     private fun page(): Observable<PartialState<QuizResultsState>> {
         return quizManager.getScoreBoard().first()
             .subscribeOn(Schedulers.io())
-            .map<PartialState<QuizResultsState>> (::PageLoaded)
+            .map<PartialState<QuizResultsState>>(::PageLoaded)
             .onErrorReturn { PageError(it) }
             .startWithItem(PageLoading())
     }
@@ -51,7 +49,7 @@ class QuizResultsInteractor
         return refresh.switchMap { _ ->
             quizManager.getScoreBoard().first()
                 .subscribeOn(Schedulers.io())
-                .map<PartialState<QuizResultsState>> (::PageLoaded)
+                .map<PartialState<QuizResultsState>>(::PageLoaded)
                 .onErrorReturn { PageError(it) }
                 .startWithItem(PageLoading())
         }

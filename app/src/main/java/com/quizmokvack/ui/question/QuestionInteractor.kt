@@ -12,9 +12,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import javax.inject.Inject
 
 class QuestionInteractor
-@Inject constructor(
-    private val quizManager: QuizManager
-) {
+@Inject constructor(private val quizManager: QuizManager) {
 
     private val refresh = PublishSubject.create<Empty>()
     private val checkQuestionChoice = PublishSubject.create<Triple<QuestionPage, Int, Long>>()
