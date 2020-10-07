@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_quiz"
+    app:startDestination="@id/quizSplashFragment">
+
+    <fragment
+        android:id="@+id/quizSplashFragment"
+        android:name="com.quizmokvack.ui.quizsplash.QuizSplashFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_quizSplashFragment_to_questionFragment"
+            app:destination="@id/questionFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@id/nav_graph_quiz"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_questionFragment"
+        app:destination="@id/questionFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popUpTo="@id/nav_graph_quiz"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.quizmokvack.ui.question.QuestionFragment"
+        android:label="PostDetailFragment" />
+
+</navigation>

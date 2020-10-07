@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.quizmokvack.ui.question.QuestionFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.quizmokvack.ui.question.QuestionViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:padding="@dimen/default_margin"
+        tools:context=".ui.MainActivity">
+
+        <androidx.constraintlayout.widget.Group
+            goneUnless="@{viewModel.contentVisible}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="category,image,question, choice_0, choice_1, choice_2, choice_3, choice_feedback, next_button,count_down_timer, boost_time_button, fifty_fifty_button" />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@{viewModel.category}"
+            android:textAppearance="?textAppearanceHeadline5"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/page_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Philosophy" />
+
+        <TextView
+            android:id="@+id/page_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.questionPageNumber}"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="5/10" />
+
+        <ImageView
+            android:id="@+id/image"
+            imageUrl="@{viewModel.imageUrl}"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintDimensionRatio="W,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/category"
+            tools:background="@color/purple_200" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@{viewModel.question}"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="What is the meaning of life?" />
+
+        <TextView
+            android:id="@+id/choice_0"
+            clipToOutline="@{true}"
+            invisibleUnless="@{viewModel.choice0Visible}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/selector_choice_button"
+            android:elevation="4dp"
+            android:enabled="@{viewModel.choicesEnabled}"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{fragment::onChoice0Click}"
+            android:padding="@dimen/default_margin"
+            android:text="@{viewModel.choice0}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/choice_2"
+            app:layout_constraintEnd_toStartOf="@id/choice_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/question"
+            tools:text="39" />
+
+        <TextView
+            android:id="@+id/choice_1"
+            clipToOutline="@{true}"
+            invisibleUnless="@{viewModel.choice1Visible}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/selector_choice_button"
+            android:elevation="4dp"
+            android:enabled="@{viewModel.choicesEnabled}"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{fragment::onChoice1Click}"
+            android:padding="@dimen/default_margin"
+            android:text="@{viewModel.choice1}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/choice_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/choice_0"
+            app:layout_constraintTop_toTopOf="@id/choice_0"
+            tools:text="40" />
+
+        <TextView
+            android:id="@+id/choice_2"
+            clipToOutline="@{true}"
+            invisibleUnless="@{viewModel.choice2Visible}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/selector_choice_button"
+            android:elevation="4dp"
+            android:enabled="@{viewModel.choicesEnabled}"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{fragment::onChoice2Click}"
+            android:padding="@dimen/default_margin"
+            android:text="@{viewModel.choice2}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/choice_feedback"
+            app:layout_constraintEnd_toStartOf="@id/choice_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choice_0"
+            tools:text="41" />
+
+        <TextView
+            android:id="@+id/choice_3"
+            clipToOutline="@{true}"
+            invisibleUnless="@{viewModel.choice3Visible}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/selector_choice_button"
+            android:elevation="4dp"
+            android:enabled="@{viewModel.choicesEnabled}"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{fragment::onChoice3Click}"
+            android:padding="@dimen/default_margin"
+            android:text="@{viewModel.choice3}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/choice_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/choice_2"
+            app:layout_constraintTop_toBottomOf="@id/choice_1"
+            tools:text="42" />
+
+        <TextView
+            android:id="@+id/choice_feedback"
+            invisibleUnless="@{viewModel.choiceFeedbackVisible}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:gravity="bottom"
+            android:minLines="2"
+            android:text="@{viewModel.choiceFeedback}"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Correct answer!" />
+
+        <com.quizmokvack.widgets.CountDownView
+            android:id="@+id/count_down_timer"
+            invisibleUnless="@{!viewModel.choiceFeedbackVisible}"
+            onTimeIsUpCallback="@{viewModel::onTimeIsUpCallback}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:gravity="end"
+            android:minWidth="69dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/time_is_up" />
+
+        <Button
+            android:id="@+id/fifty_fifty_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:enabled="@{viewModel.fiftyFiftyEnabled}"
+            android:onClick="@{fragment::onFiftyFityClick}"
+            android:text="@string/fifty_fifty"
+            app:layout_constraintBottom_toBottomOf="@id/boost_time_button"
+            app:layout_constraintEnd_toStartOf="@id/boost_time_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/boost_time_button"
+            tools:enabled="false" />
+
+        <Button
+            android:id="@+id/boost_time_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:enabled="@{viewModel.boostTimeEnabled}"
+            android:onClick="@{fragment::onBoostTimeClick}"
+            android:text="@string/time_boost"
+            app:layout_constraintBottom_toBottomOf="@id/next_button"
+            app:layout_constraintEnd_toStartOf="@id/next_button"
+            app:layout_constraintStart_toEndOf="@id/fifty_fifty_button"
+            app:layout_constraintTop_toTopOf="@id/next_button"
+            tools:enabled="false" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{viewModel.nextButtonEnabled}"
+            android:minWidth="135dp"
+            android:onClick="@{fragment::onNextClick}"
+            android:padding="@dimen/default_margin"
+            android:text="@{viewModel.nextButton}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:enabled="false"
+            tools:text="Next question" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            goneUnless="@{viewModel.loadingVisible}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            goneUnless="@{viewModel.errorVisible}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/error_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="48dp"
+                android:gravity="center"
+                android:text="@string/error_message"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/error_retry_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <Button
+                android:id="@+id/error_retry_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:onClick="@{fragment::onErrorRetry}"
+                android:paddingStart="48dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="48dp"
+                android:paddingBottom="14dp"
+                android:text="@string/try_again"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/error_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

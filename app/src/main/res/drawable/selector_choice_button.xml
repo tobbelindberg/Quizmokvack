@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_purple_600_a15_rect_radius_8" android:state_enabled="false" />
+    <item android:drawable="@drawable/bg_purple_600_rect_radius_8" />
+</selector>

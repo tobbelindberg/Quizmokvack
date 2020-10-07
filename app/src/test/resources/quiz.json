@@ -1,0 +1,222 @@
+[
+  {
+    "category": "Entertainment: Video Games",
+    "question": "Who created the digital distribution platform Steam?",
+    "image_url": "https://depor.com/resizer/aXxZ4i0D5ZAtWkTabWYZLlRATuY=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/FPYEODXF4NB7ZCWZ6RGG2EQG6I.jpg",
+    "correct_answer": "Valve",
+    "incorrect_answers": [
+      "Pixeltail Games",
+      "Ubisoft",
+      "Electronic Arts"
+    ]
+  },
+  {
+    "category": "Entertainment: Cartoon & Animations",
+    "question": "Which 'Family Guy' character got his own spin-off show in 2009?",
+    "image_url": "https://m.media-amazon.com/images/M/MV5BODEwZjEzMjAtNjQxMy00Yjc4LWFlMDAtYjhjZTAxNDU3OTg3XkEyXkFqcGdeQXVyOTM2NTM4MjA@._V1_.jpg",
+    "correct_answer": "Cleveland Brown",
+    "incorrect_answers": [
+      "Glenn Quagmire",
+      "Joe Swanson",
+      "The Greased-up Deaf Guy"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "question": "What was the name of Captain Nemo's submarine in \"20,000 Leagues Under the Sea\"?",
+    "image_url": "https://prodimage.images-bn.com/pimages/9781402725999_p0_v1_s550x406.jpg",
+    "correct_answer": "The Nautilus",
+    "incorrect_answers": [
+      "The Neptune",
+      "The Poseidon",
+      "The Atlantis"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "question": "What is the first element on the periodic table?",
+    "image_url": null,
+    "correct_answer": "Hydrogen",
+    "incorrect_answers": [
+      "Helium",
+      "Oxygen",
+      "Lithium"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "question": "What is the best selling album of all time from 1976 to 2018?",
+    "image_url": "https://www.iconfinder.com/data/icons/music-player-icons-filled/50/Big_Note-512.png",
+    "correct_answer": "Thriller",
+    "incorrect_answers": [
+      "Back in Black",
+      "Abbey Road",
+      "The Dark Side of the Moon"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "question": "What is the name of the album released in 2014 by American band \"Maroon 5\"?",
+    "image_url": "https://www.iconfinder.com/data/icons/music-player-icons-filled/50/Big_Note-512.png",
+    "correct_answer": "V",
+    "incorrect_answers": [
+      "X",
+      "III",
+      "IV"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "question": "Which of these is NOT a main playable character in \"Grand Theft Auto V\"?",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/PSX-Original-Controller.jpg",
+    "correct_answer": "Lamar",
+    "incorrect_answers": [
+      "Trevor",
+      "Michael",
+      "Franklin"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "question": "How many times do you fight Gilgamesh in \"Final Fantasy 5\"?",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/PSX-Original-Controller.jpg",
+    "correct_answer": "6",
+    "incorrect_answers": [
+      "4",
+      "5",
+      "3"
+    ]
+  },
+  {
+    "category": "Entertainment: Japanese Anime & Manga",
+    "question": "Who was given the title \"Full Metal\" in the anime series \"Full Metal Alchemist\"?",
+    "image_url": "https://thetylt.com/attachments/4ec430d51672cddcff5fe50751caf8ab4338e73f/store/fill/2400/1600/aab65d5bfccee2c5f196635474cf01fb40a6fdeede5418214785adb4bf64/FMA-original-vs-brotherhood-grid.jpg",
+    "correct_answer": "Edward Elric",
+    "incorrect_answers": [
+      "Alphonse Elric",
+      "Van Hohenheim",
+      "Izumi Curtis"
+    ]
+  },
+  {
+    "category": "History",
+    "question": "What was Manfred von Richthofen's nickname?",
+    "image_url": null,
+    "correct_answer": "The Red Baron",
+    "incorrect_answers": [
+      "The High Flying Ace",
+      "The Blue Serpent ",
+      "The Germany Gunner"
+    ]
+  },
+  {
+    "category": "Science & Nature",
+    "question": "Alzheimer's disease primarily affects which part of the human body?",
+    "image_url": null,
+    "correct_answer": "Brain",
+    "incorrect_answers": [
+      "Lungs",
+      "Skin",
+      "Heart"
+    ]
+  },
+  {
+    "category": "Entertainment: Japanese Anime & Manga",
+    "question": "In \"Inuyasha\", what are the heroes looking for to collect?",
+    "image_url": "https://occ-0-92-1722.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABVLaEdq8OCXVXSOoZDFMCPqM0KXvGprDWIsN3YBZrAs6faZnrt3ZawTTXv45RwqHOGjvsLR6AI3dBk2dku_4XnP7fBvM.jpg",
+    "correct_answer": "Jewel Shards",
+    "incorrect_answers": [
+      "Dragon Balls",
+      "Rave Stones",
+      "Sacred Stones"
+    ]
+  },
+  {
+    "category": "Entertainment: Cartoon & Animations",
+    "question": "In \"Avatar: The Last Airbender\", which element does Aang begin to learn after being defrosted?",
+    "image_url": "https://cdn.vox-cdn.com/thumbor/mXo5ObKpTbHYi9YslBy6YhfedT4=/95x601:1280x1460/1200x800/filters:focal(538x858:742x1062)/cdn.vox-cdn.com/uploads/chorus_image/image/66699060/mgidarccontentnick.comc008fa9d_d.0.png",
+    "correct_answer": "Water",
+    "incorrect_answers": [
+      "Air",
+      "Earth",
+      "Fire"
+    ]
+  },
+  {
+    "category": "Entertainment: Books",
+    "question": "Who wrote the young adult novel \"The Fault in Our Stars\"?",
+    "image_url": null,
+    "correct_answer": "John Green",
+    "incorrect_answers": [
+      "Stephenie Meyer",
+      "Suzanne Collins",
+      "Stephen Chbosky"
+    ]
+  },
+  {
+    "category": "Entertainment: Television",
+    "question": "In the show \"Tengen Toppa Gurren Lagann\" what is the name of the character who force everyone to live underground?",
+    "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aa2c1cc8-69ad-4f46-956f-b0eb0f7b600e/db8qful-62a3d7ab-b682-45d8-8c39-9a72c106bfda.jpg/v1/fill/w_1024,h_1449,q_75,strp/super_tengen_toppa_gurren_lagann_by_vistahero01_db8qful-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDQ5IiwicGF0aCI6IlwvZlwvYWEyYzFjYzgtNjlhZC00ZjQ2LTk1NmYtYjBlYjBmN2I2MDBlXC9kYjhxZnVsLTYyYTNkN2FiLWI2ODItNDVkOC04YzM5LTlhNzJjMTA2YmZkYS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.UPQlp5pbghbwfVAEcvp6DHzGpzbl4CMiqiONAlqpwBI",
+    "correct_answer": "Lordgenome",
+    "incorrect_answers": [
+      "Kingloname",
+      "Lord Genome",
+      "King Loname"
+    ]
+  },
+  {
+    "category": "Politics",
+    "question": "According to the United States Constitution, how old must a person be to be elected President of the United States?",
+    "image_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "correct_answer": "35",
+    "incorrect_answers": [
+      "30",
+      "40",
+      "45"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "question": "What year was \"Super Mario Bros\" released?",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_Bros._box.png",
+    "correct_answer": "1985",
+    "incorrect_answers": [
+      "1983",
+      "1987",
+      "1986"
+    ]
+  },
+  {
+    "category": "Vehicles",
+    "question": "What is the name of Nissan's most popular electric car?",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nissan-logo.svg/697px-Nissan-logo.svg.png",
+    "correct_answer": "Leaf",
+    "incorrect_answers": [
+      "Tree",
+      "Deer",
+      "Roots"
+    ]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "question": "What was the release date of \"Grand Theft Auto IV\"?",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/81o7zxdogKL._SX342_.jpg",
+    "correct_answer": "April 29, 2008",
+    "incorrect_answers": [
+      "May 21, 2009",
+      "June 22, 2010",
+      "July 28, 2008"
+    ]
+  },
+  {
+    "category": "Entertainment: Comics",
+    "question": "In \"Homestuck\" the \"Kingdom of Darkness\" is also known as?",
+    "image_url": null,
+    "correct_answer": "Derse",
+    "incorrect_answers": [
+      "Skaia",
+      "Prospit",
+      "The Medium"
+    ]
+  }
+]

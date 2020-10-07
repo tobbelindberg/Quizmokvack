@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Quizmokvack</string>
+    <string name="init_quiz">Initializing quiz</string>
+    <string name="question_page_number">%1$d/%2$d</string>
+    <string name="correct_answer">Correct answer!</string>
+    <string name="time_boost">+10 sec</string>
+    <string name="fifty_fifty">50/50</string>
+    <string name="time_is_up">Time is up!</string>
+    <string name="wrong_answer">Wrong answer, the correct answer is \"%s.\"</string>
+    <string name="next_question">Next question</string>
+    <string name="see_results">See results</string>
+    <string name="error_message">An error occurred. Check if you have internet connection and try again.</string>
+    <string name="try_again">Try again</string>
+</resources>
