@@ -18,6 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:fitsSystemWindows="true"
         android:paddingTop="@dimen/default_margin"
         android:paddingEnd="@dimen/default_margin"
@@ -30,6 +31,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="@dimen/default_margin" />
+
         <androidx.constraintlayout.widget.Group
             goneUnless="@{viewModel.contentVisible}"
             android:layout_width="wrap_content"
@@ -214,12 +216,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            app:layout_constraintHorizontal_chainStyle="packed"
             android:enabled="@{viewModel.fiftyFiftyEnabled}"
             android:onClick="@{fragment::onFiftyFityClick}"
             android:text="@string/fifty_fifty"
             app:layout_constraintBottom_toBottomOf="@id/boost_time_button"
             app:layout_constraintEnd_toStartOf="@id/boost_time_button"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/boost_time_button"
             tools:enabled="false" />
