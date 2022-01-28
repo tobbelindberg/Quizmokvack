@@ -1,6 +1,6 @@
 # Quizmokvack
 
-## Note that the firebase server I had setup for this project is not running anymore so you can not try the project but you can still glance at the code :)
+## Note that the firebase server I had setup for this project is not running anymore so you can not run the project and give it a try but you can still glance at the code :)
 
 ## Architecture
 An MVVM/MVI architecture where the UI has `ViewModel`s that observes the state of interactors and all state changes are delivered with partial state updates updating the interactors state object in a unidirectional way without side effects.
